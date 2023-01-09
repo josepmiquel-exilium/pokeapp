@@ -1,11 +1,10 @@
-import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
 
-function App() {
+export default function App() {
     return (
-        <div className="App">
-            <h1>Pokeapi</h1>
-        </div>
+        <Routes>
+            <Route path="/" element={<Home />} />
+        </Routes>
     );
 }
-
-export default App;
