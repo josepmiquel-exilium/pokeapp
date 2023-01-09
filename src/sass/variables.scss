@@ -1,0 +1,17 @@
+$poke-yellow: #f2cb07;
+$poke-sand: #f2b808;
+$poke-orange: #f28f16;
+$poke-white: #f2f2f2;
+$poke-red: #d93e30;
+$poke-black: #212121;
+$main-padding: 1.5rem 3rem;
+
+:export {
+    poke-yellow: $poke-yellow;
+    poke-sand: $poke-sand;
+    poke-orange: $poke-orange;
+    poke-white: $poke-white;
+    poke-red: $poke-red;
+    poke-black: $poke-black;
+    $main-padding: main-padding;
+}

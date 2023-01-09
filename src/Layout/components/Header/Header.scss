@@ -1,0 +1,7 @@
+@import '/src/sass/variables.scss';
+
+.header {
+    background-color: $poke-yellow;
+    box-shadow: 0 2px 8px 0 rgba(33, 33, 33, 0.2);
+    padding: $main-padding;
+}
