@@ -14,5 +14,10 @@
 
     button {
         background: none;
+
+        img {
+            transition: all 0.5s;
+            height: 50px;
+        }
     }
 }
