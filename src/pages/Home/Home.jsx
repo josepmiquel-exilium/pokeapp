@@ -1,3 +1,9 @@
+import Superhero from './components/Superhero';
+
 export default function Home() {
-    return <h1>Ho</h1>;
+    return (
+        <div className="home">
+            <Superhero />
+        </div>
+    );
 }

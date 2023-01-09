@@ -1,0 +1,25 @@
+@import '/src/sass/variables.scss';
+
+.menu {
+    ul {
+        display: flex;
+        gap: 3rem;
+        li {
+            font-size: 1.25rem;
+            font-weight: 500;
+
+            .navlink-inactive {
+                &:hover {
+                    color: $poke-red;
+                }
+            }
+
+            .navlink-active {
+                transition: all 0.3s;
+                padding-bottom: 1rem;
+                color: $poke-red;
+                border-bottom: 2px solid $poke-red;
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@import '/src/sass/variables.scss';
+
+.footer {
+    background-color: $poke-orange;
+    padding: $topbottom-padding * 2 $side-padding;
+}

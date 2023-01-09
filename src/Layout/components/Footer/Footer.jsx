@@ -1,3 +1,10 @@
+// Scss
+import './Footer.scss';
+
 export default function Footer() {
-    return <h1>Footer</h1>;
+    return (
+        <div className="footer">
+            <h2>Created by Josep Miquel</h2>
+        </div>
+    );
 }
