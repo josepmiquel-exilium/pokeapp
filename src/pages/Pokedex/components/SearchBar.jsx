@@ -14,7 +14,7 @@ import PokeClosed from 'assets/images/pokeball-closed.png';
 import './SearchBar.scss';
 
 export default function SearchBar() {
-    const { setPokemonFetched, setError, error, resetSwitch, loading, setLoading } =
+    const { setPokemonFetched, setError, error, resetApp, resetSwitch, loading, setLoading } =
         useAppContext();
 
     const [textSearch, setTextSearch] = useState('');
@@ -55,6 +55,8 @@ export default function SearchBar() {
                     setPokemonFetched(null);
                 })
                 .finally(() => setLoading(false));
+        } else {
+            resetApp();
         }
     };
 
