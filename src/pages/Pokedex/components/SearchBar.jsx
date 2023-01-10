@@ -14,7 +14,8 @@ import PokeClosed from 'assets/images/pokeball-closed.png';
 import './SearchBar.scss';
 
 export default function SearchBar() {
-    const { setPokemonFetched, setError, error, resetSwitch, setLoading } = useAppContext();
+    const { setPokemonFetched, setError, error, resetSwitch, loading, setLoading } =
+        useAppContext();
 
     const [textSearch, setTextSearch] = useState('');
     const [pokeballOpened, setPokeballOpened] = useState(false);
@@ -47,9 +48,10 @@ export default function SearchBar() {
                     setPokemonFetched(data);
                     setPokeballOpened(true);
                 })
-                .catch((error) => {
+                .catch((response) => {
+                    const error = response.response?.data || 'Unknown error';
                     console.log(error);
-                    setError(true);
+                    setError(error);
                     setPokemonFetched(null);
                 })
                 .finally(() => setLoading(false));
@@ -65,9 +67,14 @@ export default function SearchBar() {
                 value={textSearch}
                 onFocus={() => setSearchbarFocused(true)}
                 onBlur={() => setSearchbarFocused(false)}
+                disabled={loading}
             />
             <button>
-                <img src={pokeballOpened ? PokeOpened : PokeClosed} onClick={goSearchPokemon} />
+                <img
+                    src={pokeballOpened ? PokeOpened : PokeClosed}
+                    onClick={goSearchPokemon}
+                    className={loading ? 'pokeball-disabled' : undefined}
+                />
             </button>
         </div>
     );

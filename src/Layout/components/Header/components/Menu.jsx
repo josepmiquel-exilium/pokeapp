@@ -25,14 +25,6 @@ export default function Menu() {
                         Pokédex
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink
-                        to={'/404'}
-                        className={({ isActive }) => (isActive ? activeClass : inactiveClass)}
-                    >
-                        404
-                    </NavLink>
-                </li>
             </ul>
         </div>
     );

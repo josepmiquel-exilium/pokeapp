@@ -1,12 +1,12 @@
 @import '/src/sass/variables.scss';
 
 .superhero {
-    margin-top: -100px;
     align-items: center;
     background: linear-gradient(180deg, rgba(242, 203, 7, 1) 0%, rgba(242, 143, 22, 1) 100%);
     display: flex;
-    padding: $topbottom-padding 0 $topbottom-padding $side-padding;
     height: 100vh;
+    margin-top: -100px;
+    padding: $topbottom-padding 0 $topbottom-padding $side-padding;
     .superhero__col-left {
         display: flex;
         flex-direction: column;
@@ -48,6 +48,61 @@
         img {
             margin-left: 100px;
             width: 100%;
+        }
+    }
+}
+
+// Tablet mediaquery
+@media (min-width: 768px) and (max-width: 1024px) {
+    .superhero {
+        padding-right: 0px;
+        padding: $main-padding-page-tablet;
+
+        .superhero__col-left {
+            width: 50%;
+        }
+
+        .superhero__col-right {
+            width: 50%;
+            img {
+                margin-left: 50px;
+            }
+        }
+    }
+}
+
+// Phone mediaquery
+@media (max-width: 575.98px) {
+    .superhero {
+        flex-direction: column-reverse;
+        height: auto;
+        margin-top: initial;
+        padding-right: 0px;
+        padding: 6rem 1rem;
+
+        .superhero__col-left {
+            width: 100%;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 500;
+            }
+
+            p {
+                display: none;
+            }
+
+            button {
+                font-size: 1.25rem;
+                padding: 15px 35px;
+            }
+        }
+
+        .superhero__col-right {
+            width: 100%;
+            img {
+                margin-left: 40px;
+            }
         }
     }
 }

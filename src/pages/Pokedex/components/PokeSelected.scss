@@ -103,3 +103,27 @@
         }
     }
 }
+
+// Phone mediaquery
+@media (max-width: 575.98px) {
+    .pokeselected {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        max-width: initial;
+
+        .pokeselected__left-col {
+            width: 100%;
+        }
+
+        .pokeselected__right-col {
+            width: 100%;
+            .pokeselected__details,
+            .pokeselected__stats,
+            .pokeselected__stats__inner {
+                align-items: stretch;
+                justify-content: center;
+            }
+        }
+    }
+}

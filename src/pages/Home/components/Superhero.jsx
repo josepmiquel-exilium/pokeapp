@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// Components
+import PikachuStorm from './PikachuStorm';
 
 // Assets
 import SuperheroImage from 'assets/images/superhero.png';
@@ -7,6 +11,8 @@ import SuperheroImage from 'assets/images/superhero.png';
 import './Superhero.scss';
 
 export default function Superhero() {
+    const [animateBg, setAnimateBg] = useState(false);
+
     return (
         <div className="superhero">
             <div className="superhero__col-left">
@@ -23,12 +29,17 @@ export default function Superhero() {
                     their advantages and disadvantages
                 </p>
                 <Link to={'/pokedex'}>
-                    <button>Enter the world</button>
+                    <button
+                        onMouseEnter={() => setAnimateBg(true)}
+                        onMouseLeave={() => setAnimateBg(false)}
+                    >
+                        Enter the world
+                    </button>
                 </Link>
             </div>
 
             <div className="superhero__col-right">
-                <img src={SuperheroImage} alt="" />
+                {animateBg ? <PikachuStorm /> : <img src={SuperheroImage} alt="" />}
             </div>
         </div>
     );

@@ -24,6 +24,8 @@ export default function StatusMessage() {
                         The Team Rocket has won this time!
                     </h2>
 
+                    <h2>Reason: {error}</h2>
+
                     <ResetButton text={'Try again!'} />
                 </div>
             ) : (

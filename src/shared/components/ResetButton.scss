@@ -7,3 +7,11 @@
         font-weight: bold;
     }
 }
+
+// Phone mediaquery
+@media (max-width: 575.98px) {
+    .resetbutton {
+        display: flex;
+        justify-content: center;
+    }
+}
