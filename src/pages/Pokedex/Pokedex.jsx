@@ -16,7 +16,7 @@ export default function Pokedex() {
     return (
         <div className="pokedex">
             <SearchBar />
-            {!loading ? (
+            {loading ? (
                 <Loader />
             ) : pokemonFetched ? (
                 <Fragment>
