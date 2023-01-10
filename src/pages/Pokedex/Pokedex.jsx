@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useAppContext } from 'hooks/useAppContext';
+import { Fragment, useState } from 'react';
 
 // Components
 import PokeSelected from './components/PokeSelected';
@@ -8,12 +9,17 @@ import SearchBar from './components/SearchBar';
 import './Pokedex.scss';
 
 export default function Pokedex() {
-    const [results, setResults] = useState(null);
-
+    const { pokemonFetched, error } = useAppContext();
     return (
         <div className="pokedex">
-            <SearchBar setResults={setResults} />
-            {results && <PokeSelected results={results} />}
+            <SearchBar />
+            {error ? (
+                <p>There is an error</p>
+            ) : pokemonFetched ? (
+                <PokeSelected />
+            ) : (
+                <p>No pokemon selected</p>
+            )}
         </div>
     );
 }

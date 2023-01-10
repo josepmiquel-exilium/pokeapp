@@ -9,8 +9,11 @@ import PokeClosed from 'assets/images/pokeball-closed.png';
 
 // Scss
 import './SearchBar.scss';
+import { useAppContext } from 'hooks/useAppContext';
 
-export default function SearchBar({ setResults }) {
+export default function SearchBar() {
+    const { setPokemonFetched, setError, error } = useAppContext();
+
     const [textSearch, setTextSearch] = useState('');
     const [pokeballOpened, setPokeballOpened] = useState(false);
     const [searchbarFocused, setSearchbarFocused] = useState(false);
@@ -32,10 +35,16 @@ export default function SearchBar({ setResults }) {
         const pokemon = textSearch.toLowerCase();
 
         if (pokemon !== '')
-            getPokemonByName(pokemon).then(({ data }) => {
-                setResults(data);
-                setPokeballOpened(true);
-            });
+            getPokemonByName(pokemon)
+                .then(({ data }) => {
+                    if (error) setError(false);
+                    setPokemonFetched(data);
+                    setPokeballOpened(true);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setError(true);
+                });
     };
 
     return (
