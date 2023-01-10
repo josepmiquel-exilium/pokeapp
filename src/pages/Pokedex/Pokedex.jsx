@@ -1,5 +1,5 @@
 import { useAppContext } from 'hooks/useAppContext';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import Loader from 'shared/components/Loader';
 import ResetButton from 'shared/components/ResetButton';
 

@@ -14,10 +14,12 @@ export default function PikachuStorm() {
                     <img
                         className="shock-left"
                         src="http://www.megghy.com/gif_animate/natura/tuoni/3.gif"
+                        alt=""
                     />
                     <img
                         className="shock-right"
                         src="http://www.megghy.com/gif_animate/natura/tuoni/3.gif"
+                        alt=""
                     />
                     <div className="pik-head">
                         <div className="eye-left"></div>

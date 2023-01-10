@@ -79,6 +79,7 @@ export default function SearchBar() {
                     src={pokeballOpened ? PokeOpened : PokeClosed}
                     onClick={goSearchPokemon}
                     className={loading ? 'pokeball-disabled' : undefined}
+                    alt=""
                 />
             </button>
         </div>

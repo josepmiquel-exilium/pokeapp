@@ -26,7 +26,7 @@ export default function PokeSelected() {
                     <h2 ref={typeRef}>{pokemonFetched.types[0].type.name}</h2>
                 </div>
                 <div className="pokeselected__photo">
-                    <img src={pokemonFetched.sprites.other.home.front_default} />
+                    <img src={pokemonFetched.sprites.other.home.front_default} alt="" />
                 </div>
             </div>
 
