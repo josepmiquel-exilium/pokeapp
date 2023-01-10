@@ -27,6 +27,8 @@ export default function SearchBar() {
     }, [resetSwitch]);
 
     const handleSearchBar = ({ target }) => {
+        console.log(target);
+
         if (pokeballOpened) {
             setPokeballOpened(false);
         }
@@ -70,6 +72,7 @@ export default function SearchBar() {
                 onFocus={() => setSearchbarFocused(true)}
                 onBlur={() => setSearchbarFocused(false)}
                 disabled={loading}
+                onKeyDown={({ code }) => code === 'Enter' && goSearchPokemon()}
             />
             <button>
                 <img
