@@ -1,0 +1,9 @@
+@import '/src/sass/variables.scss';
+
+.resetbutton {
+    button {
+        background-color: $poke-red;
+        color: $poke-white;
+        font-weight: bold;
+    }
+}

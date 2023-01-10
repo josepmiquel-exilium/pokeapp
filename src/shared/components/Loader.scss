@@ -1,0 +1,9 @@
+@import '/src/sass/variables.scss';
+
+.loader {
+    display: flex;
+    justify-content: center;
+    img {
+        width: 300px;
+    }
+}

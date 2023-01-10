@@ -14,9 +14,29 @@ import Pokedex from 'pages/Pokedex/Pokedex';
 export default function App() {
     const [pokemonFetched, setPokemonFetched] = useState(null);
     const [error, setError] = useState(false);
+    const [resetSwitch, setResetSwitch] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+    // Do reset here and use effect in search bar
+    const resetApp = () => {
+        setError(false);
+        setPokemonFetched(false);
+        setResetSwitch(!resetSwitch);
+    };
 
     return (
-        <AppContextProvider value={{ pokemonFetched, setPokemonFetched, error, setError }}>
+        <AppContextProvider
+            value={{
+                pokemonFetched,
+                setPokemonFetched,
+                error,
+                setError,
+                resetApp,
+                resetSwitch,
+                loading,
+                setLoading,
+            }}
+        >
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />

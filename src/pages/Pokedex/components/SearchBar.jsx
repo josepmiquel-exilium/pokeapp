@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+// Context
+import { useAppContext } from 'hooks/useAppContext';
 
 // Services
 import { getPokemonByName } from 'api/services/pokemon';
@@ -9,16 +12,18 @@ import PokeClosed from 'assets/images/pokeball-closed.png';
 
 // Scss
 import './SearchBar.scss';
-import { useAppContext } from 'hooks/useAppContext';
 
 export default function SearchBar() {
-    const { setPokemonFetched, setError, error } = useAppContext();
+    const { setPokemonFetched, setError, error, resetSwitch, setLoading } = useAppContext();
 
     const [textSearch, setTextSearch] = useState('');
     const [pokeballOpened, setPokeballOpened] = useState(false);
     const [searchbarFocused, setSearchbarFocused] = useState(false);
 
-    console.log(searchbarFocused);
+    useEffect(() => {
+        setTextSearch('');
+        setPokeballOpened(false);
+    }, [resetSwitch]);
 
     const handleSearchBar = ({ target }) => {
         if (pokeballOpened) {
@@ -34,7 +39,8 @@ export default function SearchBar() {
     const goSearchPokemon = () => {
         const pokemon = textSearch.toLowerCase();
 
-        if (pokemon !== '')
+        if (pokemon !== '') {
+            setLoading(true);
             getPokemonByName(pokemon)
                 .then(({ data }) => {
                     if (error) setError(false);
@@ -44,7 +50,10 @@ export default function SearchBar() {
                 .catch((error) => {
                     console.log(error);
                     setError(true);
-                });
+                    setPokemonFetched(null);
+                })
+                .finally(() => setLoading(false));
+        }
     };
 
     return (

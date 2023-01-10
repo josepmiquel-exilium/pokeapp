@@ -17,17 +17,13 @@ export default function PokeSelected() {
         if (colLeftRef) colLeftRef.current.style.background = averageColor.gradient;
         if (colRightRef) colRightRef.current.style.background = averageColor.color;
         if (typeRef) typeRef.current.style.color = averageColor.color;
-    }, [averageColor, colLeftRef, colRightRef]);
+    }, [averageColor, colLeftRef, colRightRef, pokemonFetched]);
 
     return (
         <div className="pokeselected">
             <div ref={colLeftRef} className="pokeselected__left-col">
-                <div className="pokeselected__types">
-                    {pokemonFetched.types.map((e, key) => (
-                        <h2 key={key} ref={typeRef}>
-                            {e.type.name}
-                        </h2>
-                    ))}
+                <div className="pokeselected__type">
+                    <h2 ref={typeRef}>{pokemonFetched.types[0].type.name}</h2>
                 </div>
                 <div className="pokeselected__photo">
                     <img src={pokemonFetched.sprites.other.home.front_default} />

@@ -1,24 +1,30 @@
 import { useAppContext } from 'hooks/useAppContext';
 import { Fragment, useState } from 'react';
+import Loader from 'shared/components/Loader';
+import ResetButton from 'shared/components/ResetButton';
 
 // Components
 import PokeSelected from './components/PokeSelected';
 import SearchBar from './components/SearchBar';
+import StatusMessage from './components/StatusMessage';
 
 // Scss
 import './Pokedex.scss';
 
 export default function Pokedex() {
-    const { pokemonFetched, error } = useAppContext();
+    const { pokemonFetched, loading } = useAppContext();
     return (
         <div className="pokedex">
             <SearchBar />
-            {error ? (
-                <p>There is an error</p>
+            {!loading ? (
+                <Loader />
             ) : pokemonFetched ? (
-                <PokeSelected />
+                <Fragment>
+                    <PokeSelected />
+                    <ResetButton text={'Catch another one!'} />
+                </Fragment>
             ) : (
-                <p>No pokemon selected</p>
+                <StatusMessage />
             )}
         </div>
     );

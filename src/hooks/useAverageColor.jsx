@@ -1,11 +1,13 @@
 import { FastAverageColor } from 'fast-average-color';
 import { useEffect, useState } from 'react';
+import { useAppContext } from './useAppContext';
 
 const fac = new FastAverageColor();
 
 export default function useAverageColor(imageUrl) {
     const [color, setColor] = useState('');
     const [gradient, setGradient] = useState('');
+    const { setLoading } = useAppContext();
 
     useEffect(() => {
         fac.getColorAsync(imageUrl)
