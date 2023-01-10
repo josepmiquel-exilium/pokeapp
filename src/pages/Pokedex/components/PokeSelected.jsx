@@ -7,25 +7,27 @@ import './PokeSelected.scss';
 export default function PokeSelected({ results }) {
     const colLeftRef = useRef(null);
     const colRightRef = useRef(null);
+    const typeRef = useRef(null);
     const averageColor = useAverageColor(results.sprites.other.home.front_default);
-
-    console.log(averageColor);
 
     useEffect(() => {
         if (colLeftRef) colLeftRef.current.style.background = averageColor.gradient;
         if (colRightRef) colRightRef.current.style.background = averageColor.color;
+        if (typeRef) typeRef.current.style.color = averageColor.color;
     }, [averageColor, colLeftRef, colRightRef]);
 
     return (
         <div className="pokeselected">
             <div ref={colLeftRef} className="pokeselected__left-col">
-                <div className="pokeselected__photo">
-                    <img src={results.sprites.other.home.front_default} />
-                </div>
                 <div className="pokeselected__types">
                     {results.types.map((e, key) => (
-                        <h2 key={key}>{e.type.name}</h2>
+                        <h2 key={key} ref={typeRef}>
+                            {e.type.name}
+                        </h2>
                     ))}
+                </div>
+                <div className="pokeselected__photo">
+                    <img src={results.sprites.other.home.front_default} />
                 </div>
             </div>
 

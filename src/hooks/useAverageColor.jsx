@@ -10,7 +10,6 @@ export default function useAverageColor(imageUrl) {
     useEffect(() => {
         fac.getColorAsync(imageUrl)
             .then((color) => {
-                console.log(color);
                 setColor(color.hex);
 
                 const colorEnd = [...color.value.slice(0, 3), 0].join(',');
