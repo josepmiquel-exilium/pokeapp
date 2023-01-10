@@ -27,8 +27,6 @@ export default function SearchBar() {
     }, [resetSwitch]);
 
     const handleSearchBar = ({ target }) => {
-        console.log(target);
-
         if (pokeballOpened) {
             setPokeballOpened(false);
         }
@@ -52,7 +50,6 @@ export default function SearchBar() {
                 })
                 .catch((response) => {
                     const error = response.response?.data || 'Unknown error';
-                    console.log(error);
                     setError(error);
                     setPokemonFetched(null);
                 })
