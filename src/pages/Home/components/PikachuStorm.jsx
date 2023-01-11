@@ -1,3 +1,4 @@
+// Scss
 import './PikachuStorm.scss';
 
 export default function PikachuStorm() {

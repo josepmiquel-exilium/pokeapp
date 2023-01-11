@@ -1,5 +1,6 @@
-// Components
 import { Link } from 'react-router-dom';
+
+// Components
 import PokemonLogo from 'shared/components/PokemonLogo';
 import Menu from './components/Menu';
 

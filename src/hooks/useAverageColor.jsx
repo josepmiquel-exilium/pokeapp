@@ -1,5 +1,5 @@
-import { FastAverageColor } from 'fast-average-color';
 import { useEffect, useState } from 'react';
+import { FastAverageColor } from 'fast-average-color';
 
 const fac = new FastAverageColor();
 

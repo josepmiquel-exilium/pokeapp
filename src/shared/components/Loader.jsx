@@ -1,7 +1,7 @@
 // Assets
 import Ducksyl from 'assets/images/ducksyl.gif';
 
-// Loader
+// Scss
 import './Loader.scss';
 
 export default function Loader() {

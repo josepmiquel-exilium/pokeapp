@@ -1,3 +1,4 @@
+// Components
 import Superhero from './components/Superhero';
 
 export default function Home() {

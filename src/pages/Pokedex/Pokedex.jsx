@@ -1,9 +1,11 @@
-import { useAppContext } from 'hooks/useAppContext';
 import { Fragment } from 'react';
-import Loader from 'shared/components/Loader';
-import ResetButton from 'shared/components/ResetButton';
+
+// Hooks
+import { useAppContext } from 'hooks/useAppContext';
 
 // Components
+import Loader from 'shared/components/Loader';
+import ResetButton from 'shared/components/ResetButton';
 import PokeSelected from './components/PokeSelected';
 import SearchBar from './components/SearchBar';
 import StatusMessage from './components/StatusMessage';

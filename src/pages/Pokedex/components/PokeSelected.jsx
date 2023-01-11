@@ -1,6 +1,7 @@
+import { useEffect, useRef } from 'react';
+// Hooks
 import { useAppContext } from 'hooks/useAppContext';
 import useAverageColor from 'hooks/useAverageColor';
-import { useEffect, useRef } from 'react';
 
 // Scss
 import './PokeSelected.scss';

@@ -4,13 +4,15 @@ import { Route, Routes } from 'react-router-dom';
 // Layout
 import Layout from './Layout/Layout';
 
+// Hooks
+import ScroolToTop from 'hooks/ScroolToTop';
+
 // Context
 import { AppContextProvider } from 'context/AppContext';
 
 // Pages
 import Home from './pages/Home/Home';
 import Pokedex from 'pages/Pokedex/Pokedex';
-import ScroolToTop from 'hooks/ScroolToTop';
 
 export default function App() {
     const [pokemonFetched, setPokemonFetched] = useState(null);

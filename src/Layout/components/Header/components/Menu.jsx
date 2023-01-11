@@ -1,5 +1,6 @@
-// Scss
 import { NavLink } from 'react-router-dom';
+
+// Scss
 import './Menu.scss';
 
 export default function Menu() {

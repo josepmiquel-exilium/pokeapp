@@ -1,3 +1,4 @@
+// Assets
 import PokeLogo from 'assets/images/pokelogo.png';
 
 export default function PokemonLogo({ size = 250 }) {
