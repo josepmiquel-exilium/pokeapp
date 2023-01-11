@@ -13,6 +13,7 @@ import './Pokedex.scss';
 
 export default function Pokedex() {
     const { pokemonFetched, loading } = useAppContext();
+
     return (
         <div className="pokedex">
             <SearchBar />

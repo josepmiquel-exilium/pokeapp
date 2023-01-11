@@ -10,6 +10,7 @@ import { AppContextProvider } from 'context/AppContext';
 // Pages
 import Home from './pages/Home/Home';
 import Pokedex from 'pages/Pokedex/Pokedex';
+import ScroolToTop from 'hooks/ScroolToTop';
 
 export default function App() {
     const [pokemonFetched, setPokemonFetched] = useState(null);
@@ -22,6 +23,7 @@ export default function App() {
         setError(false);
         setPokemonFetched(false);
         setResetSwitch(!resetSwitch);
+        window.scrollTo(0, 0);
     };
 
     return (
@@ -38,6 +40,7 @@ export default function App() {
             }}
         >
             <Layout>
+                <ScroolToTop />
                 <Routes>
                     <Route path="*" element={<Home />} />
                     <Route path="/" element={<Home />} />
