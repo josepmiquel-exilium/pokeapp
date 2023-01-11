@@ -23,7 +23,6 @@ export default function App() {
         setError(false);
         setPokemonFetched(false);
         setResetSwitch(!resetSwitch);
-        window.scrollTo(0, 0);
     };
 
     return (
